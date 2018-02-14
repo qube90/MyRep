@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbService.DBServiceController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Towary">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="200.0" prefHeight="572.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="productTable" prefHeight="572.0" prefWidth="615.0">
+                                <columns>
+                                  <TableColumn fx:id="idColumn" prefWidth="47.0" text="ID" />
+                                  <TableColumn fx:id="nameColumn" prefWidth="273.0" text="Nazwa" />
+                                    <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="91.0" text="Cena" />
+                                    <TableColumn fx:id="companyColumn" prefWidth="108.0" text="Producent" />
+                                    <TableColumn fx:id="dobColumn" text="Data zakupu" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="571.0" prefWidth="202.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="24.0" prefWidth="138.0" text="Dodaj towar" />
+                              <TextField fx:id="id" maxWidth="175.0" prefHeight="25.0" prefWidth="50.0" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="name" maxWidth="175.0" prefHeight="25.0" prefWidth="50.0" promptText="Nazwa">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="price" maxWidth="175.0" prefHeight="25.0" prefWidth="50.0" promptText="Cena">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="12.5" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="company" maxWidth="175.0" prefHeight="25.0" prefWidth="50.0" promptText="Producent">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="12.5" />
+                                 </VBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="dob" maxWidth="175.0" promptText="Data zakupu">
+                                 <VBox.margin>
+                                    <Insets left="12.5" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <TextField fx:id="image" disable="true" editable="false" maxWidth="175.0" prefHeight="25.0" prefWidth="50.0" promptText="Producent" text="Image">
+                                 <VBox.margin>
+                                    <Insets left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="addButton" mnemonicParsing="false" onAction="#addProduct" prefWidth="175.0" text="Dodaj">
+                                 <VBox.margin>
+                                    <Insets left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearData" prefWidth="175.0" text="Wyczyść dane">
+                                 <VBox.margin>
+                                    <Insets left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="loadButton" mnemonicParsing="false" onAction="#loadProductsData" prefWidth="175.0" text="Ładuj dane">
+                                 <VBox.margin>
+                                    <Insets left="12.5" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="...">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
